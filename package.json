@@ -1,0 +1,26 @@
+{
+  "name": "measure",
+  "version": "0.9.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "babel-loader": "^8.0.0-beta.0",
+    "eslint": "^4.17.0",
+    "eslint-loader": "^1.9.0",
+    "webpack": "^3.11.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [
+    "measure",
+    "unit",
+    "prefix",
+    "convert",
+    "primitive"
+  ],
+  "author": "Robert Alnesjö",
+  "license": "LGPL-3.0"
+}
