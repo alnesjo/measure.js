@@ -1,7 +1,7 @@
 const short = Symbol('short');
 
 class Unit {
-    constructor(s,p) {
+    constructor(s) {
         this[short] = s;
     }
     valueOf() {
