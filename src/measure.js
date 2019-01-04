@@ -1,52 +1,39 @@
-import {kilo, none, centi, milli} from './prefix';
-import {one, gram, metre, second} from './unit';
+import * as dimension from './dimension';
 
-const prefix = Symbol('prefix');
-const unit = Symbol('unit');
-const number  = Symbol('number');
+const _number = Symbol('number'), _prefix = Symbol('prefix'), _unit = Symbol('unit');
 
 class Measure {
-    constructor(n, p = none, u = one) {
-        this[number] = +n; // hint = number
-        this[prefix] = p;
-        this[unit] = u;
+
+    constructor(number, prefix, unit) {
+        this[_number] = +number; // hint = number
+        this[_prefix] = prefix;
+        this[_unit] = unit;
     }
 
     valueOf() {
-        return this[number];
+        return this[_number];
     }
 
     toString() {
-        return `${this[number]}${this[prefix]}${this[unit]}`;
+        return `${this[_number]}${this[_prefix]}${this[_unit]}`;
+    }
+
+}
+
+let base = {}, extended = {};
+
+for (const d of Object.values(dimension)) {
+    base[d] = class extends Measure {};
+    for (const u of d) {
+        for (const p of u) {
+            extended[`${p}${u}`] = n => Object.freeze(new base[d](n, p, u));
+            Object.defineProperty(base[d].prototype, `${p}${u}`, {
+                get: function () {
+                    return extended[`${p}${u}`](this[_number] * 10 ** (this[_prefix] - p) * this[_unit] / u);
+                },
+            });
+        }
     }
 }
 
-let measure = {};
-
-const prefixes = [kilo, none, centi, milli];
-const units = [gram, metre, second];
-const combinations = prefixes.map(p => units.map(u => ({p, u}))).reduce((a, b) => [...a, ...b]);
-
-for (const {p, u} of combinations) {
-    // Constructor
-    measure[`${p}${u}`] = class extends Measure {
-        constructor(n) {
-            super(n, p, u);
-        }
-    };
-    // Getter and setter
-    Object.defineProperty(Measure.prototype, `${p}${u}`, {
-        get: function () {
-            if (u === this[unit]) {
-                return 10 ** (this[prefix] - p) * this[number];
-            } else {
-                throw new TypeError(`no known conversion from ${this[unit]} to ${u}`);
-            }
-        },
-        set: function (n) {
-            this[number] = 10 ** (p - this[prefix]) * n;
-        }
-    });
-}
-
-export default measure;
+export const {km, m, cm, mm, kg, g, mg, s, ms, in: inch, ft} = extended;

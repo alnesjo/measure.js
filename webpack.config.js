@@ -1,10 +1,14 @@
+/* eslint-env node */
 const path = require('path');
-const package = require('./package.json');
+const {name, module: entry} = require('./package.json');
 
 module.exports = {
-    entry: './src/index.js',
+    mode: 'production',
+    entry: entry,
     output: {
-        filename: `${package.name}-${package.version}.js`,
-        path: path.resolve(__dirname, 'dist')
-    }
+        library: name,
+        libraryTarget: 'umd',
+        filename: `${name}.js`,
+        path: path.resolve(__dirname, 'dist'),
+    },
 };
