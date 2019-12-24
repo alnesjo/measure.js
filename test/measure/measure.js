@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import {expect} from 'chai';
-import {Measure} from '../../lib/measure/Measure.js';
+import {Measure} from '../../lib/measure/measure.js';
 
 describe('Measure', function () {
     describe('#constructor', function () {
