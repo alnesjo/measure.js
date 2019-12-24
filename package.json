@@ -12,7 +12,7 @@
   ],
   "author": "Robert Alnesjö",
   "license": "MIT",
-  "module": "lib/measure/index.js",
+  "module": "lib/measure.js",
   "dependencies": {},
   "repository": {
     "type": "git",
@@ -26,7 +26,9 @@
     "ava": "^1.0.1",
     "chai": "^4.2.0",
     "eslint": "^5.11.0",
+    "eslint-config-google": "^0.14.0",
     "mocha": "^5.2.0",
+    "prettier": "^1.19.1",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
