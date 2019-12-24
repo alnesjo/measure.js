@@ -1,22 +1,35 @@
 /* eslint-env mocha */
 
 import {expect} from 'chai';
-import {Measure} from '../../src/measure/Measure';
+import {Measure} from '../../src/measure/Measure.js';
+import {s, µs, ft, inch} from '../../src/measure/index.js';
 
 describe('Measure', function () {
     describe('#constructor', function () {
-        it('does not throw', function () {
+        it('should not throw', function () {
             expect(Measure.constructor).to.not.throw();
         });
     });
     describe('#valueOf()', function () {
-        it('returns the numerical value', function () {
-            expect(Measure(73, 'c', 'm').valueOf()).to.equal(73);
+        it('should return the numerical value', function () {
+            expect(new Measure(73, 'c', 'm').valueOf()).to.equal(73);
         });
     });
     describe('#toString()', function () {
-        it('returns a formatted string', function () {
-            expect(Measure(17, 'm', 's').toString()).to.equal('17ms');
+        it('should return a string representation', function () {
+            expect(new Measure(17, 'm', 's').toString()).to.equal('17ms');
         });
+    });
+});
+
+describe('µs', function () {
+    it('should convert to s', function () {
+        expect(µs(123456789).s).to.eql(s(123.456789));
+    });
+});
+
+describe('ft', function () {
+    it('should convert to in', function () {
+        expect(ft(123).in).to.eql(inch(1476));
     });
 });
