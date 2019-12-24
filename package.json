@@ -12,7 +12,7 @@
   ],
   "author": "Robert Alnesjö",
   "license": "MIT",
-  "module": "./src/measure/index.js",
+  "module": "lib/measure/index.js",
   "dependencies": {},
   "repository": {
     "type": "git",
