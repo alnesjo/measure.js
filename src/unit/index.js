@@ -1,22 +1,5 @@
-import {femto, pico, nano, micro, milli, centi, deci, none, hecto, kilo, mega, giga} from './prefix';
-
-class Unit extends Array {
-
-    constructor(symbol, factor, ...prefix) {
-        super(...prefix);
-        this.symbol = symbol;
-        this.factor = factor;
-    }
-
-    valueOf() {
-        return this.factor;
-    }
-
-    toString() {
-        return this.symbol;
-    }
-
-}
+import {Unit} from './Unit';
+import {centi, deci, femto, giga, hecto, kilo, mega, micro, milli, nano, none, pico} from '../prefix';
 
 export const inch = Object.freeze(new Unit('in', 0.0254, none));
 export const foot = Object.freeze(new Unit('ft', 0.3048, none));

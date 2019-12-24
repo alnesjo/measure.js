@@ -1,15 +1,4 @@
-class Prefix {
-    constructor(s,p) {
-        this.symbol = s;
-        this.power = p;
-    }
-    valueOf() {
-        return this.power;
-    }
-    toString() {
-        return this.symbol;
-    }
-}
+import {Prefix} from './Prefix';
 
 export const yotta = Object.freeze(new Prefix('Y', 24));
 export const zetta = Object.freeze(new Prefix('Z', 21));

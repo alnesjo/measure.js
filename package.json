@@ -13,20 +13,26 @@
   "author": "Robert Alnesjö",
   "license": "MIT",
   "main": "./dist/measure.js",
-  "module": "./src/index.js",
+  "module": "src/measure/index.js",
   "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/alnesjo/measure.js.git"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
     "acorn": "^6.0.4",
+    "ava": "^1.0.1",
+    "chai": "^4.2.0",
     "eslint": "^5.11.0",
+    "mocha": "^5.2.0",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
+    "test": "mocha --recursive --require @babel/register",
     "build": "webpack",
     "debug": "webpack-dev-server --devtool source-map --content-base dist/"
   }
