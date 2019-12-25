@@ -33,8 +33,9 @@
     "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
-    "test": "mocha --recursive --require @babel/register",
+    "verify": "eslint . && prettier -c $(ls -A)",
     "compile": "webpack",
+    "test": "mocha --recursive --require @babel/register",
     "deploy": "webpack-dev-server --devtool source-map --content-base dist/"
   }
 }
