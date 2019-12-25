@@ -20,11 +20,11 @@
     "package-lock.json"
   ],
   "module": "lib/measure.js",
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/alnesjo/measure.git"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/register": "^7.7.7",
     "chai": "^4.2.0",
