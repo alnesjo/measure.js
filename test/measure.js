@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import {expect} from 'chai';
-import {cm, ft, min, inch, s, ms} from '../../lib/measure.js';
+import {cm, ft, min, inch, s, ms} from '../lib/measure.js';
 
 describe('s', function() {
   it('should print sensibly', function() {

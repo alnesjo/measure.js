@@ -19,14 +19,13 @@
     "url": "https://github.com/alnesjo/metis.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/register": "^7.0.0",
-    "acorn": "^6.0.4",
-    "ava": "^1.0.1",
+    "@babel/register": "^7.7.7",
     "chai": "^4.2.0",
+    "common-config-webpack-plugin": "^1.4.0",
     "eslint": "^5.11.0",
     "eslint-config-google": "^0.14.0",
+    "html-webpack-externals-plugin": "^3.8.0",
+    "html-webpack-plugin": "^3.2.0",
     "mocha": "^5.2.0",
     "prettier": "^1.19.1",
     "webpack": "^4.28.2",
@@ -35,7 +34,7 @@
   },
   "scripts": {
     "test": "mocha --recursive --require @babel/register",
-    "build": "webpack",
-    "debug": "webpack-dev-server --devtool source-map --content-base dist/"
+    "compile": "webpack",
+    "deploy": "webpack-dev-server --devtool source-map --content-base dist/"
   }
 }
