@@ -1,6 +1,6 @@
 {
   "name": "@alnesjo/measure",
-  "version": "1.0.0",
+  "version": "1.0.0-0",
   "description": "Simple objects for managing units and magnitudes of measured quantities.",
   "keywords": [
     "measure",
@@ -13,12 +13,7 @@
   "author": "Robert Alnesjö",
   "license": "MIT",
   "main": "dist/@alnesjo/measure.min.js",
-  "files": [
-    "dist/",
-    "LICENSE",
-    "package.json",
-    "package-lock.json"
-  ],
+  "files": [],
   "module": "lib/measure.js",
   "repository": {
     "type": "git",
