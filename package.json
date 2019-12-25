@@ -13,6 +13,12 @@
   "author": "Robert Alnesjö",
   "license": "MIT",
   "main": "dist/@alnesjo/measure.min.js",
+  "files": [
+    "dist/",
+    "LICENSE",
+    "package.json",
+    "package-lock.json"
+  ],
   "module": "lib/measure.js",
   "dependencies": {},
   "repository": {
