@@ -1,5 +1,5 @@
 {
-  "name": "metis",
+  "name": "@alnesjo/measure",
   "version": "1.0.0",
   "description": "Simple objects for managing units and magnitudes of measured quantities.",
   "keywords": [
@@ -12,11 +12,12 @@
   ],
   "author": "Robert Alnesjö",
   "license": "MIT",
+  "main": "dist/@alnesjo/measure.min.js",
   "module": "lib/measure.js",
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/alnesjo/metis.git"
+    "url": "https://github.com/alnesjo/measure.git"
   },
   "devDependencies": {
     "@babel/register": "^7.7.7",
