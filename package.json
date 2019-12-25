@@ -39,10 +39,42 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "google"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "require-jsdoc": [
+        "off"
+      ],
+      "new-cap": [
+        "off"
+      ]
+    }
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "arrowParens": "always"
+  },
   "scripts": {
-    "verify": "eslint . && prettier -c $(ls -A)",
-    "compile": "webpack",
+    "prepack": "webpack",
+    "pretest": "eslint --ignore-path .gitignore . && prettier --ignore-path .gitignore -c $(find .)",
     "test": "mocha --recursive --require @babel/register",
-    "deploy": "webpack-dev-server --devtool source-map --content-base dist/"
+    "start": "webpack-dev-server -d"
   }
 }
